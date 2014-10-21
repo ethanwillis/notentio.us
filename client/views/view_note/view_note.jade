@@ -1,0 +1,18 @@
+template(name="view_note")
+	if isPublic
+		if title
+			h3.text-center {{title}}
+			p.text-center 
+				+facebookLike likeConfig
+		else
+			h3.text-center No Title
+			p.text-center
+				+facebookLike likeConfig
+		hr
+		if body
+			p {{body}}
+		else
+			h3 Sorry, there was a problem loading this note.
+	
+	else
+		h3 Sorry, we weren't able to find that note

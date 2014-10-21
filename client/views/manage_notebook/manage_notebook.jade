@@ -1,0 +1,30 @@
+template(name="manage_notebook")
+	.container
+		.row
+			.col-lg-12.text-center
+				h3 
+					if name
+						| {{name}}
+					else
+						| No Title
+				if createdBy.profile.name
+					small Written By: {{createdBy.profile.name}}
+		.row
+			.col-xs-12
+				button.btn.btn-primary.pull-right#composeNewNote Compose Note
+		.row
+			.col-xs-12
+				hr
+		.row
+			each myNotes
+				.col-xs-2
+					.panel.panel-primary
+						.panel-heading
+							if title
+								| {{title}}
+							else
+								| No Title
+							a.deleteNote(href="#")
+								span.glyphicon.glyphicon-remove.pull-right(style="color: #951F2B;", id="{{_id}}")
+						a.thumbnail(href="/compose_note/{{_id}}", style="margin: 0px;")
+							img(src="http://placehold.it/160x196")

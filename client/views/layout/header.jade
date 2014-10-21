@@ -1,0 +1,19 @@
+template(name="header")
+	<!--bootstrap related classes delete otherwise-->
+	.navbar.navbar-default.navbar-fixed-top(role="navigation")
+		.container
+			.navbar-header
+				button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand mycampushacks
+			.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li.active
+						a(href="{{pathFor 'index'}}") Home
+					+site_links
+					li
+						a(href="#")
+							+loginButtons

@@ -1,0 +1,10 @@
+template(name="main")
+	body
+		+header
+		if currentUser
+			.container
+				+yield
+		else
+			.container
+				h3 Sorry You Need to Login First
+		+footer

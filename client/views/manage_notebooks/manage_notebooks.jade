@@ -1,0 +1,46 @@
+template(name="manage_notebooks")
+	.container
+		.col-lg-12
+			.col-sm-12
+				h2.text-center
+					| My Notebooks
+			.col-sm-12
+				button.btn.btn-primary.pull-right(data-toggle="modal", data-target="#createNotebookModal") Create Notebook
+			.col-sm-12
+				hr
+			.col-sm-12
+				each notebooks
+					.col-md-2
+						.carousel.slide(data-ride="carousel")
+							.carousel-inner
+								.item.active
+									a.editHover(href="/manage_notebook/{{_id}}", id="{{_id}}")
+										+if hasNotes _id
+											img.img-responsive(src="/images/book2.png")
+										else
+											img.img-responsive(src="/images/book1.png")
+										.carousel-caption(style="top: 0; bottom: auto;")
+											if name
+												| {{name}}
+											else
+												| No Title
+										.carousel-caption.notebookEdit(style="display: none;", id="edit{{_id}}")
+											a.deleteNotebook(href="#")
+												span.glyphicon.glyphicon-remove.pull-right(style="color: #951F2B;", id="{{_id}}")
+		.modal.fade#createNotebookModal
+			.modal-dialog.modal-lg
+				.modal-content
+					.modal-header
+						button.close(type="button", data-dismiss="modal")
+							span(aria-hidden="true") &times;
+							span.sr-only Close
+						h4.modal-title Create a Notebook
+					.modal-body
+						form.form-horizontal
+							.form-group
+								label.col-sm-2.control-label(for="notebookName") Name
+								.col-sm-10
+									input.form-control#notebookName(type="text", placeholder="Enter a notebook name...")
+					.modal-footer
+						button.btn.btn-primary.pull-right#createNotebook Save
+						button.btn.btn-default.pull-right(data-dismiss="modal") Close
