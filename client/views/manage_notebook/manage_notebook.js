@@ -1,10 +1,12 @@
 Template.manage_notebook.helpers ({
-
-    // controllers
-    tpl_info: function() {
-        return 'This is manage_notebook template, find me at client/views/manage_notebook'
-    }
-
+	hasNotes: function(notebookId) {
+		var hasNotes = notes.find({notebooks: {$elemMatch: { _id: notebookId}}}).count();
+		if( hasNotes > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 });
 
 Template.manage_notebook.events ({
@@ -17,9 +19,26 @@ Template.manage_notebook.events ({
 		},
 		'click .deleteNote': function(event) {
 			notes.remove({_id: event.target.id});
+		},
+		'click .editNote': function(event) {
+			
+		},
+		'mouseover .editHover': function(event) {
+			var editId = event.currentTarget.id;
+			var selector = '#edit'+editId;
+			if($(selector).css('display') != 'inline') {
+				$(selector).css('display', 'inline');
+			}
+		},
+		'mouseout .editHover': function(event) {
+			var editId = event.currentTarget.id;
+			var selector = '#edit'+editId;
+			if($(selector).css('display') != 'none') {
+				$(selector).css('display', 'none');
+			}
 		}
 });
 
 Template.manage_notebook.myNotes = function() {
-	return notes.find({});//{notebooks: {$elemMatch: {_id: this._id}}});
+	return notes.find({notebooks: {$elemMatch: {_id: this._id}}});
 }

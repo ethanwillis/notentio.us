@@ -1,3 +1,13 @@
 template(name="index")
-	h2 Home page content
-	h3 I am the Index page, find me at client/views/index.html
+	.jumbotron.backgroundCH1
+		h1.coolHeading2.whiteFont What is livenot.es?
+		p.whiteFont livenot.es allows you to record, livestream, save, and automatically 
+			em(rel="tooltip", data-toggle="tooltip", title="We transcribe the audio of your lectures in realtime into your notes") textify* 
+			| your class lectures. Running late to or missed a class? No problem just listen to a livestream from one of your classmates or review the automatically generated 
+			em(rel="tooltip", data-toggle="tooltip", data-placement="top", title="Read publically available class notes and listen to recorded lectures!") notes* 
+			| later!
+	hr
+	.container.container-fluid(style="background-color: #FFF")
+		.row
+			.col-xs-12
+				img.img-responsive(src="/images/notebooks.png")

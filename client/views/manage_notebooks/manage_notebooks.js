@@ -10,8 +10,15 @@ Template.manage_notebooks.helpers ({
 			}	else {
 				return false;
 			}
+		},
+		hasNotebooks: function() {
+			var notebookCount = notebooks.find({}).count();
+			if( notebookCount > 0 )	{
+				return true;
+			} else {
+				return false;
+			}
 		}
-
 });
 
 

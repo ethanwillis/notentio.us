@@ -1,12 +1,12 @@
 template(name="compose_note")
-	.container
-		.col-lg-3
-			+note_navigation
-		.col-lg-9
+	.container.container-fluid
+		.col-sm-9
 			+note_editor
+		.col-sm-3
+			+note_navigation
 
 template(name="note_navigation")
-	.panel.panel-info
+	.panel.panel-warning
 		.panel-heading My "{{notebooks.[0].name}}" Notes
 		table.table.table-responsive.table-striped.table-condensed
 			thead
@@ -40,7 +40,7 @@ template(name="note_editor")
 			else
 				textarea.form-control#body(rows="20" placeholder="Start writing your note...")
 		.form-group
-			.col-sm-2
+			.col-xs-2
 				+facebookShare shareConfig
-			.col-sm-10
+			.col-xs-10
 				button.btn.btn-primary.pull-right#saveNote(type="submit") Save to Notebook 

@@ -1,30 +1,42 @@
 template(name="manage_notebook")
-	.container
+	.container.container-fluid
 		.row
-			.col-lg-12.text-center
-				h3 
+			.col-xs-12.text-center
+				h2.coolHeading2
 					if name
 						| {{name}}
 					else
 						| No Title
 				if createdBy.profile.name
-					small Written By: {{createdBy.profile.name}}
+					small.coolHeading2 Written By: {{createdBy.profile.name}}
 		.row
 			.col-xs-12
-				button.btn.btn-primary.pull-right#composeNewNote Compose Note
+				button.btn.btn-warning.pull-right#composeNewNote Compose Note
 		.row
 			.col-xs-12
 				hr
 		.row
-			each myNotes
-				.col-xs-2
-					.panel.panel-primary
-						.panel-heading
-							if title
-								| {{title}}
-							else
-								| No Title
-							a.deleteNote(href="#")
-								span.glyphicon.glyphicon-remove.pull-right(style="color: #951F2B;", id="{{_id}}")
-						a.thumbnail(href="/compose_note/{{_id}}", style="margin: 0px;")
-							img(src="http://placehold.it/160x196")
+			if hasNotes _id
+				each myNotes
+					.col-xs-3
+						.carousel.slide(data-ride="carousel")
+							.carousel-inner
+									.item.active
+										a.editHover(href="/compose_note/{{_id}}", id="{{_id}}")
+											img.img-responsive(src="/images/paper1.png", style="margin: 0 auto;")
+											.container.container-fluid
+												.carousel-caption(style="top: 0; bottom: auto;")
+													if title
+														p.text-muted {{title}}
+													else
+														p.text-muted No Title
+											.container.container-fluid
+												.carousel-caption.noteEdit(style="display:none;", id="edit{{_id}}")
+													a.editNote(href="#")
+														span.glyphicon.glyphicon-cog.pull-left
+													a.deleteNote(href="#")
+														span.glyphicon.glyphicon-remove.pull-right(style="color: #951F2B;", id="{{_id}}")
+			else
+				h1.text-center.coolHeading2 You don't have written any notes here yet :( 
+				br
+				br
