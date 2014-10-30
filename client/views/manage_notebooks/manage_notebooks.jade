@@ -53,9 +53,8 @@ template(name="manage_notebooks")
 					.modal-body
 						form.form-horizontal
 							.form-group
-								label.col-sm-2.control-label(for="notebookName") Name
-								.col-xs-10
+								.col-xs-12
 									input.form-control#notebookName(type="text", placeholder="Enter a notebook name...")
 					.modal-footer
 						button.btn.btn-primary.pull-right#createNotebook(data-dismiss="modal") Save
-						button.btn.btn-default.pull-right(data-dismiss="modal") Close
+						button.btn.btn-default.pull-left(data-dismiss="modal") Close

@@ -22,6 +22,7 @@ ddp@1.0.10
 deps@1.0.5
 ejson@1.0.4
 email@1.0.4
+ewillis1:meteor-medium-editor-npm@1.0.0
 facebook@1.1.1
 fastclick@1.0.1
 follower-livedata@1.0.2
@@ -30,7 +31,6 @@ html-tools@1.0.2
 htmljs@1.0.2
 http@1.0.7
 id-map@1.0.1
-insecure@1.0.1
 iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1
@@ -43,12 +43,17 @@ localstorage@1.0.1
 logging@1.0.4
 meteor-platform@1.1.2
 meteor@1.1.2
+meteorhacks:async@1.0.0
+meteorhacks:npm@1.2.0
 minifiers@1.1.1
 minimongo@1.0.4
 mizzao:bootstrap-3@3.2.0_1
 mobile-status-bar@1.0.1
 mongo@1.0.7
+mquandalle:bower@0.1.11
+mrt:rtcmulticonnection@0.0.4
 npm-bcrypt@0.7.7
+npm-container@1.0.0
 oauth1@1.1.1
 oauth2@1.1.1
 oauth@1.1.1

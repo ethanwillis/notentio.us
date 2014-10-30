@@ -2,9 +2,9 @@ template(name="main")
 	body.backgroundCH1
 		+header
 		if currentUser
-			.container
+			.container.container-fluid
 				+yield
 		else
-			.container
+			.container.container-fluid
 				h3 Sorry You Need to Login First
 		+footer

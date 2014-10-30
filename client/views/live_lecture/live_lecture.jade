@@ -1,0 +1,10 @@
+template(name="live_lecture")
+	.container.container-fluid
+		.row
+			.col-xs-12.text-center
+				if broadcasterName
+					h3.coolHeading2 You're currently listening to a live lecture being broadcast by {{broadcasterName}}
+				else
+					h3.coolHeading2 You're currently listening to a live lecture
+		.row
+			.col-xs

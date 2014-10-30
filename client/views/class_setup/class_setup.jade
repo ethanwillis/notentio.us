@@ -1,0 +1,28 @@
+template(name="class_setup")
+	.container.container-fluid
+		.row
+			.col-xs-12
+				+course_search
+		.row
+			.col-xs-12
+				+list_courses
+
+template(name="list_courses")
+	each courses
+		.col-sm-3
+			.carousel.slide(data-ride="carousel")
+				.carousel-inner
+					.item-active
+						a.editHover(id="{{_id}}")
+							img.img-responsive(src="/images/book2.png", style="margin: 0 auto;")
+							.carousel-caption(style="top: 10px; bottom auto;")
+								| {{department_code}}
+								| {{course_code}}
+								br
+								| {{course_title}}
+
+template(name="course_search")
+	form(role="form")
+		h2.text-center.coolHeading2 Add your courses below!
+		.form-group
+			input.input-lg.form-control#courseSearch(type="text", placeholder="Search by course name, number, or department..")

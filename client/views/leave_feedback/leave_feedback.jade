@@ -1,0 +1,22 @@
+template(name="leave_feedback")
+	.container.container-fluid
+		.row
+			.col-xs-12
+				form(role="form")
+					h1.text-center.coolHeading2 Tell us what you think!
+					if currentUser
+						|   
+					else
+						.form-group
+							input.form-control#emailAddress(type="text", placeholder="Email address..." autofocus)
+						.form-group
+							input.form-control#firstName(type="text", placeholder="First name...")
+						.form-group
+							input.form-control#lastName(type="text", placeholder="Last name...")
+					.form-group
+						textarea.form-control#feedbackText(rows="10", placeholder="Enter your message here..." autofocus)
+					.form-group
+						.alert.alert-success.text-center#successAlert(role="alert", style="display: none") Thank you for your feedback, it means a lot!
+						button.btn.btn-lg.btn-block.btn-warning#sendFeedback(type="button") Say it!
+		.row
+			br

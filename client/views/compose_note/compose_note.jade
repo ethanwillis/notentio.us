@@ -1,9 +1,13 @@
 template(name="compose_note")
-	.container.container-fluid
-		.col-sm-9
-			+note_editor
-		.col-sm-3
-			+note_navigation
+	.col-xs-2(style="margin-top: 0px; padding-top: 10px;")
+		a(href="/manage_notebook/{{notebooks.[0]._id}}")
+			span.glyphicon.glyphicon-bookmark(style="font-size: 3.5em; color: #333332 !important;")
+	.col-xs-8(style="padding-top: 100px")
+		+note_editor
+	.col-xs-2
+		span.glyphicon.glyphicon-link.pull-right(style="font-size: 3.5em; color: #333332")
+	//-.col-sm-3
+	//-	+note_navigation
 
 template(name="note_navigation")
 	.panel.panel-warning
@@ -20,27 +24,30 @@ template(name="note_navigation")
 								else
 									| No Title
 	.panel.panel-default
-		.panel-heading Related Notes
+		.panel-heading Share With Friends!
 		.panel-body
 			table.table-responsive.table-condensed
-				td
-					tr
-						a.text-info(href="#") Related Note
+				thead
+				tbody
+				tr
+					td
+						+facebookShare shareConfig
 
 template(name="note_editor")
-	.form-horizontal
-		.form-group
-			if title
-				input.form-control.col-lg-12#title(value="{{title}}")
-			else
-				input.form-control.col-lg-12#title(placeholder="Enter Note Name...")
-		.form-group
-			if body
-				textarea.form-control#body(rows="20") {{body}}
-			else
-				textarea.form-control#body(rows="20" placeholder="Start writing your note...")
-		.form-group
-			.col-xs-2
-				+facebookShare shareConfig
-			.col-xs-10
+	#editor(style="font-family: Roboto; font-size: 20px; outline: none !important; ")
+	//-
+		.form-horizontal
+			.form-group
+				if title
+					input.form-control.col-lg-12#title(value="{{title}}")
+				else
+					input.form-control.col-lg-12#title(placeholder="Enter Note Name..." autofocus)
+			.form-group
+				if body
+					textarea.form-control#body(rows="20") {{body}}
+				else
+					textarea.form-control#body(rows="20" placeholder="Start writing your note...")
+			.form-group
+				a(href="/manage_notebook/{{notebooks.[0]._id}}")
+					button.btn.btn-primary.pull-left(type="button") Go back to Notebook
 				button.btn.btn-primary.pull-right#saveNote(type="submit") Save to Notebook 

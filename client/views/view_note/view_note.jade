@@ -1,18 +1,21 @@
 template(name="view_note")
 	if isPublic
 		if title
-			h3.text-center {{title}}
-			p.text-center 
+			h3.text-center.coolHeading2 {{title}}
+			p.text-center
 				+facebookLike likeConfig
 		else
-			h3.text-center No Title
+			h3.text-center.coolHeading2 No Title
 			p.text-center
 				+facebookLike likeConfig
 		hr
 		if body
-			p {{body}}
+			p.whiteFont {{body}}
 		else
-			h3 Sorry, there was a problem loading this note.
+			h3 Sorry, nothing has been written in this note yet.
 	
 	else
-		h3 Sorry, we weren't able to find that note
+		h3 Sorry, this note is not available 
+	br
+	br
+	br

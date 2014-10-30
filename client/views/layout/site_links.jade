@@ -1,5 +1,8 @@
 template(name="site_links")
-	li
-		a(href="/manage_notebooks/") My notebooks
-	li
+	if currentUser
+		li
+			a(href="/manage_notebooks/") My notebooks
+		li
+			a(href="/lecture_to_notes") lecture2note
+	li(style="display: none;")
 		a(href="/textbook_marketplace") 

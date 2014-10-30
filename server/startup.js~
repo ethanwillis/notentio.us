@@ -1,0 +1,171 @@
+if(Meteor.isServer) { 
+	Meteor.startup(function() {
+		if(courses.find({school_code: '003509'}).count() === 0) {
+			var courses = {
+											{
+												school_code: '003509',
+												department_code: 'AAAS',
+												department_title 'African and African-American Studies', 
+												course_code: '2100',
+												course_title: 'Intro Afr/Afr American Study',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '001',
+														days: 'MWF',
+														time_start: '11:30',
+														time_end: '12:25'
+													},
+												]
+											},
+											
+											{
+												school_code: '003509',
+												department_code: 'AAAS',
+												department_title 'African and African American Studies', 
+												course_code: '3100',
+												course_title: 'Research Method/Afr American',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'AAAS',
+												department_title 'African and African American Studies', 
+												course_code: '4451',
+												course_title: 'Rhetoric of Hip Hop',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'AAAS',
+												department_title 'African and African American Studies', 
+												course_code: '4901',
+												course_title: 'Independent Study',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'ACAD',
+												department_title 'Academics', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'ACAD',
+												department_title 'Academics', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'ACCT',
+												department_title 'Accountancy', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'AERO',
+												department_title 'Aerospace Studies', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},
+											{
+												school_code: '003509',
+												department_code: 'AGRI',
+												department_title 'Agriculture RODP', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},	
+											{
+												school_code: '003509',
+												department_code: 'ALH',
+												department_title 'Health Info Tech RODP', 
+												course_code: '',
+												course_title: '',
+												term: 'Fall 2014',
+												sections: [
+													{
+														section_code: '',
+														days: '',
+														time_start: '',
+														time_end: ''
+													}
+												]
+											},	
+											
+										};
+			courses.insert({
+		}
+
+}

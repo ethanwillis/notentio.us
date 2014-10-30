@@ -1,0 +1,21 @@
+template(name="lecture_to_notes")
+	.container-fluid
+		.row
+			.col-xs-12.text-center
+				h3.coolHeading2 Number of Listeners:
+			hr 
+		.row
+			.col.xs-12.text-center
+				button.btn.btn-warning.btn-lg
+					span.glyphicon.glyphicon-record(style="font-size: 6em;")
+		.row
+			+record
+		.row
+			br
+
+template(name="record")
+	div#record(hidden="true")
+		button.btn.btn-primary#start-recording(type="button") Record
+		button.btn.btn-primary#stop-recording(type="button") Stop
+	div#media-error
+		h3 Please enable the microphone in order to record

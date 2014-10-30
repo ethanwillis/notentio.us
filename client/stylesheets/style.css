@@ -11,3 +11,8 @@
 .whiteFont {
 	color: #FFF;
 }
+
+#editor h1 {
+	font-family: Roboto,
+	font-weight: 300
+}
