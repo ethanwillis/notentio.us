@@ -1,12 +1,7 @@
-Template.leave_feedback.helpers ({
-
-    tpl_info: function() {
-        return 'This is leave_feedback template, find me at client/views/leave_feedback'
-    }
-
+Template.leaveFeedback.helpers ({
 });
 
-Template.leave_feedback.events ({
+Template.leaveFeedback.events ({
 		'click #sendFeedback': function() {
 			// If a user isn't logged in then, make sure to get the extra
 			// form fields.
@@ -27,11 +22,6 @@ Template.leave_feedback.events ({
 				// display an alert
 				$("#successAlert").css('display', 'block');
 			}
-		},
-    // event handlers
-    'click #delete': function() {
-        //
-    }
-
+		}
 });
 

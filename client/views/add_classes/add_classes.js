@@ -1,4 +1,4 @@
-Template.add_classes.helpers ({
+Template.addClasses.helpers ({
 
     // controllers
     tpl_info: function() {
@@ -7,7 +7,7 @@ Template.add_classes.helpers ({
 
 });
 
-Template.add_classes.events ({
+Template.addClasses.events ({
 
     // event handlers
     'click #submitClass': function() {
@@ -20,4 +20,3 @@ Template.add_classes.events ({
 		}
 
 });
-

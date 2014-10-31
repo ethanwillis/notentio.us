@@ -1,10 +1,4 @@
-Template.class_setup.helpers ({
-
-    // controllers
-    tpl_info: function() {
-        return 'This is class_setup template, find me at client/views/class_setup'
-    }
-
+Template.classSetup.helpers ({
 });
 
 if(Meteor.isClient) {
@@ -23,20 +17,13 @@ if(Meteor.isClient) {
 	}
 };
 
-Template.class_setup.events ({
-
-    // event handlers
-    'click #delete': function() {
-        //
-    },
+Template.classSetup.events ({
 		'keyup #courseSearch': function() {
 			mySearch.update(courseSearch.value);	
 		}
-
 });
 
-
-Template.list_courses.courses = function() {
+Template.listCourses.courses = function() {
 	return courses.find({$or: [{department_code: mySearch.get()},{department_title: mySearch.get()},{course_code: mySearch.get()}]}, {limit: 75});
 	/*
 		Very fucking slow TODO: Find a fast efficient way to do distinct() and group by queries for mongodb on meteor.
@@ -49,6 +36,6 @@ Template.list_courses.courses = function() {
 	return distinctEntries;*/
 };
 
-Template.course_search.query = function() {
+Template.courseSearch.query = function() {
 	return mySearch.get();
 };

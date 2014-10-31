@@ -1,4 +1,4 @@
-template(name="lecture_to_notes")
+template(name="lectureToNotes")
 	.container-fluid
 		.row
 			.col-xs-12.text-center
@@ -6,16 +6,9 @@ template(name="lecture_to_notes")
 			hr 
 		.row
 			.col.xs-12.text-center
-				button.btn.btn-warning.btn-lg
+				button.btn.btn-warning.btn-lg#record
 					span.glyphicon.glyphicon-record(style="font-size: 6em;")
-		.row
-			+record
+				button.btn.btn-warning.btn-lg#stopRecord(style="display: none;")
+					span.glyphicon.glyphicon-stop(style="font-size: 6em;")
 		.row
 			br
-
-template(name="record")
-	div#record(hidden="true")
-		button.btn.btn-primary#start-recording(type="button") Record
-		button.btn.btn-primary#stop-recording(type="button") Stop
-	div#media-error
-		h3 Please enable the microphone in order to record

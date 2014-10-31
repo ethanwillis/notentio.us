@@ -1,21 +1,9 @@
-template(name="view_note")
+template(name="viewNote")
 	if isPublic
-		if title
-			h3.text-center.coolHeading2 {{title}}
-			p.text-center
-				+facebookLike likeConfig
-		else
-			h3.text-center.coolHeading2 No Title
-			p.text-center
-				+facebookLike likeConfig
-		hr
-		if body
-			p.whiteFont {{body}}
-		else
-			h3 Sorry, nothing has been written in this note yet.
-	
-	else
-		h3 Sorry, this note is not available 
-	br
-	br
-	br
+		.col-xs-2
+			span.glyphicon.glyphicon-file(style="font-size: 3.5em; color: #333332")
+		.col-xs-8(style="padding-top: 100px")
+			#editor(style="font-family: Roboto; font-size: 20px; outline none !important;")
+				{{noteBody}}
+		.col-xs-2
+			span.glyphicon.glyphicon-link.pull-right(style="font-size:3.5em; color: #333332")

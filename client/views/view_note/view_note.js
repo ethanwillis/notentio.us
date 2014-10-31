@@ -1,27 +1,36 @@
-Template.view_note.rendered = function() {
+Template.viewNote.rendered = function() {
 	try {
 		FB.XFBML.parse();
 	} catch(e) {}
+	editorConfig = {
+		anchorInputPlaceholder: "Type a link..",
+		buttons: [],
+		disableEditing: true,
+		placeholder: ''
+	}
+	editor = new MediumEditor('#editor', editorConfig);
+	if( $('#editor').html() === "") {
+		$('#editor').html('<h1><b> Title</b><h1> Some note text...');
+	}
 };
 
-Template.view_note.helpers ({
-    // controllers
-    tpl_info: function() {
-        return 'This is view_note template, find me at client/views/view_note'
-    }
+Template.viewNote.helpers ({
+});
+
+Template.viewNote.noteBody = function() {
+	if( $('#editor') === undefined) {
+		return "";
+	}  
+	else { 
+		$('#editor').html( notes.findOne({_id: this._id}, {fields: {body: 1}}).body);
+	}
+};
+
+Template.viewNote.events ({
 
 });
 
-Template.view_note.events ({
-
-    // event handlers
-    'click #delete': function() {
-        //
-    }
-
-});
-
-Template.view_note.likeConfig = function() {
+Template.viewNote.likeConfig = function() {
 	var myHref = 'http://localhost:3000/view_note/'+this._id;
 	return {href: myHref};
 }

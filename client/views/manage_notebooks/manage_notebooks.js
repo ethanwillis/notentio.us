@@ -1,4 +1,4 @@
-Template.manage_notebooks.helpers ({
+Template.manageNotebooks.helpers ({
 		// controllers
     tpl_info: function() {
         return 'This is manage_notebook template, find me at client/views/manage_notebook'
@@ -23,7 +23,7 @@ Template.manage_notebooks.helpers ({
 
 
 
-Template.manage_notebooks.events ({
+Template.manageNotebooks.events ({
 		'click #createNotebook': function() {
 		  // Insert notebook into database	
 			var createdByUser = Meteor.user();
@@ -51,7 +51,7 @@ Template.manage_notebooks.events ({
 		}
 });
 
-Template.manage_notebooks.notebooks = function() {
+Template.manageNotebooks.notebooks = function() {
 	return notebooks.find({});
 }
 

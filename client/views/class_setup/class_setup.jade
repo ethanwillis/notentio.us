@@ -1,13 +1,13 @@
-template(name="class_setup")
+template(name="classSetup")
 	.container.container-fluid
 		.row
 			.col-xs-12
-				+course_search
+				+courseSearch
 		.row
 			.col-xs-12
-				+list_courses
+				+listCourses
 
-template(name="list_courses")
+template(name="listCourses")
 	each courses
 		.col-sm-3
 			.carousel.slide(data-ride="carousel")
@@ -21,7 +21,7 @@ template(name="list_courses")
 								br
 								| {{course_title}}
 
-template(name="course_search")
+template(name="courseSearch")
 	form(role="form")
 		h2.text-center.coolHeading2 Add your courses below!
 		.form-group

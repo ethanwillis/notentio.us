@@ -1,4 +1,4 @@
-Template.manage_notebook.helpers ({
+Template.manageNotebook.helpers ({
 	hasNotes: function(notebookId) {
 		var hasNotes = notes.find({notebooks: {$elemMatch: { _id: notebookId}}}).count();
 		if( hasNotes > 0 ) {
@@ -9,7 +9,7 @@ Template.manage_notebook.helpers ({
 	}
 });
 
-Template.manage_notebook.events ({
+Template.manageNotebook.events ({
 		'click #composeNewNote': function() {
 			// create a new note in the database
 			var notebooksData = [{_id: this._id, name: this.name}];
@@ -39,6 +39,6 @@ Template.manage_notebook.events ({
 		}
 });
 
-Template.manage_notebook.myNotes = function() {
+Template.manageNotebook.myNotes = function() {
 	return notes.find({notebooks: {$elemMatch: {_id: this._id}}});
 }
